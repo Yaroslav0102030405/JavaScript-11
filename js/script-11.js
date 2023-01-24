@@ -25,11 +25,39 @@
  * - Заменяет классический for, если не нужно прерывать цикл
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-numbers.forEach(function (number) {
-  console.log(number);
-});
+// numbers.forEach(function (number) {
+//   console.log(number);
+// });
 
-console.log(numbers);
+// console.log(numbers);
+
+// там где у тебя был for или for...of можешь использовать forEach
+
+
+// Сейчас такой подход имутабельность - это когда ты не хочешь что-то изменять в существующих данных
+// ты хочшь на их базе создать новые данные и просто переписать в эту переменную
+// Не изменять новый массив а создать массив и его подменить
+
+/*
+* Array.prototype.map()
+* - Поэлементно перебирает оригианльный массив
+* - Не изменяет оригинальный массив
+* - Возвращает новый массив такой же длины
+*/
+
+const numbers = [5, 10, 15, 20, 25]
+
+const doubledNums = numbers.map(function (number) {
+    console.log(number)
+
+    return number * 2
+    // поставишь *2 все значения уножиться на 2
+})
+
+console.log(numbers)
+console.log(doubledNums)
+
+// 99% работы с данными это будет массив обьектов
 
