@@ -46,28 +46,28 @@
  * - Возвращает новый массив такой же длины
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const doubledNums = numbers.map(function (number) {
-  console.log(number);
+// const doubledNums = numbers.map(function (number) {
+//   console.log(number);
 
-  return number * 2;
-  // поставишь *2 все значения уножиться на 2
-});
+//   return number * 2;
+//   // поставишь *2 все значения уножиться на 2
+// });
 
-console.log(numbers);
-console.log(doubledNums);
+// console.log(numbers);
+// console.log(doubledNums);
 
 // 99% работы с данными это будет массив обьектов
 
 // Метод map() - позволяет получить список свойств из обьекта. Например. Получить массив их имен
-const players = [
-  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
-  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
-  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
-  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
-  { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
-];
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+//   { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//   { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
+// ];
 
 // const playerNames = players.map(player => {
 //     console.log(player)
@@ -143,13 +143,64 @@ const players = [
 // console.table(upatedPlayers)
 
 // ТОже самое с тернарным оператором
-const playerIdToUpdate = "player-3";
+// const playerIdToUpdate = "player-3";
 
-const upatedPlayers = players.map((player) =>
-  playerIdToUpdate === player.id
-    ? { ...player, timePlayed: player.timePlayed + 100 }
-    : // распыление это мы делаем копию обьекта
-      player
-);
+// const upatedPlayers = players.map((player) =>
+//   playerIdToUpdate === player.id
+//     ? { ...player, timePlayed: player.timePlayed + 100 }
+//     : // распыление это мы делаем копию обьекта
+//       player
+// );
 
-console.table(upatedPlayers);
+// console.table(upatedPlayers);
+
+/*
+* Array.prototype.filter()
+* - Поэлементно перебирает оригинальный массив
+* - Вщзвращает новый массив (с элементами или пустой)
+* - Добавляет в возвращаемый массив элементы которые удовлетворяют условию колбек-функции
+* - если колбек вернул true элемент добавляется в возвращаемый массив
+* - если колбек вернул false элемент НЕ добавляется в возвращаемый массив
+*/
+
+const numbers = [5, 10, 15, 20, 25]
+console.log(numbers)
+
+const filteredNumbers = numbers.filter(number => number < 10 || number > 20)
+  // тут можно писать любое условие лишь бы оно вернуло тру или фолс
+  // вернет true елемент запишеться в новый массив если вернет false элемент НЕ запишеться
+console.log(filteredNumbers)
+
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+  { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
+];
+
+// filter - умеет только фильтровать по условию какому-то
+
+/*
+* Полчучаем массив всех онлайн игроков
+*/
+
+// const onlinePlayers = players.filter(player => player.online)
+// тут мы просто говорим по какому условию отфильтровать
+// console.table(onlinePlayers)
+
+/*
+* Получаем массив всех оффлайн игроков
+*/
+
+const onlinePlayers = players.filter((player) => !player.online);
+// тут мы просто говорим по какому условию отфильтровать
+console.table(onlinePlayers);
+
+/*
+* Получаем список хардкорных игроков с временем больше 250
+*/
+
+const hardcorePlayers = players.filter(player => player.timePlayed > 250)
+console.table(hardcorePlayers)
+
