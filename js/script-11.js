@@ -155,21 +155,66 @@
 // console.table(upatedPlayers);
 
 /*
-* Array.prototype.filter()
-* - Поэлементно перебирает оригинальный массив
-* - Вщзвращает новый массив (с элементами или пустой)
-* - Добавляет в возвращаемый массив элементы которые удовлетворяют условию колбек-функции
-* - если колбек вернул true элемент добавляется в возвращаемый массив
-* - если колбек вернул false элемент НЕ добавляется в возвращаемый массив
-*/
+ * Array.prototype.filter()
+ * - Поэлементно перебирает оригинальный массив
+ * - Вщзвращает новый массив (с элементами или пустой)
+ * - Добавляет в возвращаемый массив элементы которые удовлетворяют условию колбек-функции
+ * - если колбек вернул true элемент добавляется в возвращаемый массив
+ * - если колбек вернул false элемент НЕ добавляется в возвращаемый массив
+ */
 
-const numbers = [5, 10, 15, 20, 25]
-console.log(numbers)
+// const numbers = [5, 10, 15, 20, 25]
+// console.log(numbers)
 
-const filteredNumbers = numbers.filter(number => number < 10 || number > 20)
-  // тут можно писать любое условие лишь бы оно вернуло тру или фолс
-  // вернет true елемент запишеться в новый массив если вернет false элемент НЕ запишеться
-console.log(filteredNumbers)
+// const filteredNumbers = numbers.filter(number => number < 10 || number > 20)
+//   // тут можно писать любое условие лишь бы оно вернуло тру или фолс
+//   // вернет true елемент запишеться в новый массив если вернет false элемент НЕ запишеться
+// console.log(filteredNumbers)
+
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+//   { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//   { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
+// ];
+
+// filter - умеет только фильтровать по условию какому-то
+
+/*
+ * Полчучаем массив всех онлайн игроков
+ */
+
+// const onlinePlayers = players.filter(player => player.online)
+// тут мы просто говорим по какому условию отфильтровать
+// console.table(onlinePlayers)
+
+/*
+ * Получаем массив всех оффлайн игроков
+ */
+
+// const onlinePlayers = players.filter((player) => !player.online);
+// // тут мы просто говорим по какому условию отфильтровать
+// console.table(onlinePlayers);
+
+// /*
+// * Получаем список хардкорных игроков с временем больше 250
+// */
+
+// const hardcorePlayers = players.filter(player => player.timePlayed > 250)
+// console.table(hardcorePlayers)
+
+/*
+ * Array.prototype.find()
+ * - Поэлементно перебирает оригинальный массив
+ * - Возвращает первый элемент удовлетворяющий условию или undefined
+ */
+
+// fins() - используеться для поиска уникальных элементов в коллекции
+const numbers = [5, 10, 15, 20, 25];
+
+const number = numbers.find((number) => number === 10);
+console.log(number);
 
 const players = [
   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
@@ -178,29 +223,26 @@ const players = [
   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
   { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
 ];
-
-// filter - умеет только фильтровать по условию какому-то
-
-/*
-* Полчучаем массив всех онлайн игроков
-*/
-
-// const onlinePlayers = players.filter(player => player.online)
-// тут мы просто говорим по какому условию отфильтровать
-// console.table(onlinePlayers)
+// мы получим первый элемент который удовлетворяет этому условию
+// как только находит первый подходящий элемент то оно перестает дальше проверять
 
 /*
-* Получаем массив всех оффлайн игроков
-*/
+ * Ищем игрока по id
+ */
 
-const onlinePlayers = players.filter((player) => !player.online);
-// тут мы просто говорим по какому условию отфильтровать
-console.table(onlinePlayers);
+const playerIdToFind = "player-3";
+
+const playerWithId = players.find((player) => player.id === playerIdToFind);
+console.log(playerWithId);
 
 /*
-* Получаем список хардкорных игроков с временем больше 250
-*/
+ * Ищем игрока по имени
+ */
 
-const hardcorePlayers = players.filter(player => player.timePlayed > 250)
-console.table(hardcorePlayers)
+const playerNameToFind = "Poly";
+
+const playerWithName = players.find(
+  (player) => player.name === playerNameToFind
+);
+console.log(playerWithName);
 
