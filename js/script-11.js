@@ -246,3 +246,32 @@ const playerWithName = players.find(
 );
 console.log(playerWithName);
 
+/*
+* Array.prototype.every()
+* - Поэлементно перебирает оригинальный массив
+* - Возвращает true если все элементы массива удовлетворют условию
+*/
+
+/*
+* Проверить или все игроки онлайн?
+*/
+
+const isAllOnline = players.every(player => player.online)
+console.log(isAllOnline)
+
+/*
+* Array.prototype.some()
+* - Поэлементно перебирает оригинальный массив
+* - Возвращает true если хотя бы один элемент массива удовлетворет условию
+*/
+
+/*
+* Проверяет хотя бы один есть онлайн?
+*/
+
+const isAnyOnline = players.some((player) => player.online);
+console.log(isAnyOnline);
+
+// Возвращает статус true или false а обьекты не возвращает
+
+// filter и find - для того чтобы найти обьекты а every и some проверить или один или все онлайн?
