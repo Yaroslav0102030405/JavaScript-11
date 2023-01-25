@@ -376,3 +376,47 @@ console.log(tagsStats);
 // Изучение языка и изучение програмирования - это две разные вещи
 // Програмирование - это алгоритмическое мышление. Только на практике решением задач
 // Это решение проблем с которыми ты раньше не сталкивался базируясь на тех знаниях которые у тебя сейчас есть
+
+const objactA = {
+  a: 10,
+  b: true,
+};
+
+// console.log(objactA)
+
+// objactA.a = 20;
+// console.log(objactA)
+
+// objactA.c = 'abc'
+// objactA.r = 12
+// console.log(objactA)
+
+const objactB = objactA;
+
+objactB.a = 50;
+objactB.c = 123;
+console.log(objactA);
+
+console.log(objactB);
+
+// function a() {
+//   console.log('Hey there')
+// }
+
+// a()
+
+// a = 10
+
+// a()
+
+const a = () => {
+  console.log("Hey there");
+};
+
+a();
+
+a = 10;
+
+a();
+
+// JS - это динамически типизируемый язык. Потому что тип переменной не указываеться когда эта переменная обьявляеться
