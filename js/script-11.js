@@ -211,18 +211,18 @@
  */
 
 // fins() - используеться для поиска уникальных элементов в коллекции
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const number = numbers.find((number) => number === 10);
-console.log(number);
+// const number = numbers.find((number) => number === 10);
+// console.log(number);
 
-const players = [
-  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
-  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
-  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
-  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
-  { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
-];
+// const players = [
+//   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+//   { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+//   { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//   { id: "player-5", name: "Chelsy", timePlayed: 280, points: 48, online: true },
+// ];
 // мы получим первый элемент который удовлетворяет этому условию
 // как только находит первый подходящий элемент то оно перестает дальше проверять
 
@@ -230,48 +230,149 @@ const players = [
  * Ищем игрока по id
  */
 
-const playerIdToFind = "player-3";
+// const playerIdToFind = "player-3";
 
-const playerWithId = players.find((player) => player.id === playerIdToFind);
-console.log(playerWithId);
+// const playerWithId = players.find((player) => player.id === playerIdToFind);
+// console.log(playerWithId);
 
 /*
  * Ищем игрока по имени
  */
 
-const playerNameToFind = "Poly";
+// const playerNameToFind = "Poly";
 
-const playerWithName = players.find(
-  (player) => player.name === playerNameToFind
-);
-console.log(playerWithName);
-
-/*
-* Array.prototype.every()
-* - Поэлементно перебирает оригинальный массив
-* - Возвращает true если все элементы массива удовлетворют условию
-*/
+// const playerWithName = players.find(
+//   (player) => player.name === playerNameToFind
+// );
+// console.log(playerWithName);
 
 /*
-* Проверить или все игроки онлайн?
-*/
-
-const isAllOnline = players.every(player => player.online)
-console.log(isAllOnline)
-
-/*
-* Array.prototype.some()
-* - Поэлементно перебирает оригинальный массив
-* - Возвращает true если хотя бы один элемент массива удовлетворет условию
-*/
+ * Array.prototype.every()
+ * - Поэлементно перебирает оригинальный массив
+ * - Возвращает true если все элементы массива удовлетворют условию
+ */
 
 /*
-* Проверяет хотя бы один есть онлайн?
-*/
+ * Проверить или все игроки онлайн?
+ */
 
-const isAnyOnline = players.some((player) => player.online);
-console.log(isAnyOnline);
+// const isAllOnline = players.every((player) => player.online);
+// console.log(isAllOnline);
+
+/*
+ * Array.prototype.some()
+ * - Поэлементно перебирает оригинальный массив
+ * - Возвращает true если хотя бы один элемент массива удовлетворет условию
+ */
+
+/*
+ * Проверяет хотя бы один есть онлайн?
+ */
+
+// const isAnyOnline = players.some((player) => player.online);
+// console.log(isAnyOnline);
 
 // Возвращает статус true или false а обьекты не возвращает
 
 // filter и find - для того чтобы найти обьекты а every и some проверить или один или все онлайн?
+
+/*
+ * Array.prototype.reduce()
+ * - Поэлементно перебирает оригинальный массив
+ * - Возвращает что угодно
+ * - Заменяет все на свете но использовать нужно с умом
+ */
+
+const numbers = [5, 10, 15, 20, 25];
+
+const total = numbers.reduce((acc, number) => acc + number, 0);
+console.log(total);
+
+/*
+ * Считаем общую зарплату
+ */
+
+const salary = {
+  mango: 150,
+  poly: 50,
+  ajax: 100,
+};
+
+const totalSalary = Object.values(salary).reduce(
+  (total, value) => total + value,
+  0
+);
+console.log(totalSalary);
+
+// 0 - это начальное значение с чего мы начинаем считать
+// Начальные условием может быть массив или обьект
+
+/*
+ * Считаем общее количество часов
+ */
+
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+  { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
+];
+
+const totalTimePlayer = players.reduce(
+  (totalTime, player) => totalTime + player.timePlayed,
+  0
+);
+
+console.log(totalTimePlayer);
+
+/*
+ * Считаем общую сумму товаров корзины
+ */
+
+const cart = [
+  { label: "Apples", price: 100, quantity: 2 },
+  { label: "Bananas", price: 120, quantity: 3 },
+  { label: "Lemons", price: 70, quantity: 4 },
+];
+
+const totalAmmount = cart.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
+
+console.log(totalAmmount);
+
+// Прогресс идет к более декларативному програмированию чтобы писать пару символов и все работало
+
+/*
+ * Собираем все теги из твитов
+ */
+
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+console.log(allTags);
+
+/*
+ * Ведем статистику тегов
+ */
+
+const tagsStats = allTags.reduce((acc, tag) => {
+  return {
+    ...acc,
+    [tag]: acc[tag] ? acc[tag] + 1 : 1,
+  };
+}, {});
+
+console.log(tagsStats);
+
+// Изучение языка и изучение програмирования - это две разные вещи
+// Програмирование - это алгоритмическое мышление. Только на практике решением задач
+// Это решение проблем с которыми ты раньше не сталкивался базируясь на тех знаниях которые у тебя сейчас есть
