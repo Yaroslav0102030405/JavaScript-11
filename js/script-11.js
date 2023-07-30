@@ -587,3 +587,29 @@ const totalAmmount = cart.reduce(
 )
 
 console.log(totalAmmount)
+
+const tweets = [
+  { id: '000', likes: 5, tags: ['js', 'node.js'] },
+  { id: '001', likes: 2, tags: ['html', 'css'] },
+  { id: '002', likes: 17, tags: ['html', 'js', 'node.js'] },
+  { id: '003', likes: 8, tags: ['css', 'react'] },
+  { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+]
+
+const allTags = tweets.reduce((tags, tweet) => {
+//  tags.push(...tweet.tags)
+
+ return [...tags, ...tweet.tags]
+}, [])
+
+console.log(allTags)
+
+const tagsStats = allTags.reduce(
+  (acc, tag) => ({
+  ...acc, 
+  [tag]: acc[tag] ? acc[tag] +1 : 1,
+}),
+{},
+)
+
+console.log(tagsStats)
