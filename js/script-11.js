@@ -498,15 +498,15 @@
 // console.log(filteredNumbers)
 
 
-const players = [
-  { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
-  { id: 'player-2', name: 'Kiwi', timePlayed: 470, points: 92, online: true },
-  { id: 'player-3', name: 'Poly', timePlayed: 230, points: 48, online: true },
-  { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
-  { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
-]
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+//   { id: 'player-2', name: 'Kiwi', timePlayed: 470, points: 92, online: true },
+//   { id: 'player-3', name: 'Poly', timePlayed: 230, points: 48, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
+// ]
 
-console.log(players)
+// console.log(players)
 
 // const onlinePlayers = players.filter(player => player.online)
 // console.log(onlinePlayers)
@@ -529,50 +529,50 @@ console.log(players)
 // const playerWithId = players.find(player => player.id === 'player-2')
 // console.log(playerWithId)
 
-const playerIdToFind = 'player-2'
+// const playerIdToFind = 'player-2'
 
-const playerWithId = players.find(({ id }) => id === playerIdToFind)
-console.log(playerWithId)
+// const playerWithId = players.find(({ id }) => id === playerIdToFind)
+// console.log(playerWithId)
 
-const isAllOnline = players.every(player => player.online) 
-console.log(isAllOnline)
+// const isAllOnline = players.every(player => player.online) 
+// console.log(isAllOnline)
 
-const isAllPoints = players.every(player => player.points > 40) 
-console.log(isAllPoints)
+// const isAllPoints = players.every(player => player.points > 40) 
+// console.log(isAllPoints)
 
-const isAnyOnline = players.some(player => player.online)
-console.log(isAnyOnline)
-
-
-
-const numbers = [5, 10, 15, 20, 25]
-
-const total = numbers.reduce((acc, number) => acc + number, 0)
-
-console.log('total -', total)
+// const isAnyOnline = players.some(player => player.online)
+// console.log(isAnyOnline)
 
 
-const salary = {
-  mango: 100,
-  poly: 50,
-  kiwi: 150,
-}
 
-const totalSalary = Object.values(salary).reduce((total, value) => total + value, 0)
-console.log(totalSalary)
+// const numbers = [5, 10, 15, 20, 25]
 
-const totalTimePlayed = players.reduce(
-  (totalTime, player) => totalTime + player.timePlayed, 
-  0
-  )
+// const total = numbers.reduce((acc, number) => acc + number, 0)
 
-console.log(totalTimePlayed)
+// console.log('total -', total)
 
-const cart = [
-  { label: 'Apples', price: 100, quantity: 2 },
-  { label: 'Bananas', price: 120, quantity: 3 },
-  { label: 'Lemous', price: 70, quantity: 4 },
-]
+
+// const salary = {
+//   mango: 100,
+//   poly: 50,
+//   kiwi: 150,
+// }
+
+// const totalSalary = Object.values(salary).reduce((total, value) => total + value, 0)
+// console.log(totalSalary)
+
+// const totalTimePlayed = players.reduce(
+//   (totalTime, player) => totalTime + player.timePlayed, 
+//   0
+//   )
+
+// console.log(totalTimePlayed)
+
+// const cart = [
+//   { label: 'Apples', price: 100, quantity: 2 },
+//   { label: 'Bananas', price: 120, quantity: 3 },
+//   { label: 'Lemous', price: 70, quantity: 4 },
+// ]
 
 // const totalAmmount = cart.reduce((total, item) => {
 //   return total + item.price * item.quantity
@@ -581,12 +581,12 @@ const cart = [
 // console.log(totalAmmount)
 
 
-const totalAmmount = cart.reduce(
-  (total, { price, quantity }) => total + price * quantity,
-0,
-)
+// const totalAmmount = cart.reduce(
+//   (total, { price, quantity }) => total + price * quantity,
+// 0,
+// )
 
-console.log(totalAmmount)
+// console.log(totalAmmount)
 
 const tweets = [
   { id: '000', likes: 5, tags: ['js', 'node.js'] },
@@ -596,20 +596,87 @@ const tweets = [
   { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
 ]
 
-const allTags = tweets.reduce((tags, tweet) => {
-//  tags.push(...tweet.tags)
+// const allTags = tweets.reduce((tags, tweet) => {
+// //  tags.push(...tweet.tags)
 
- return [...tags, ...tweet.tags]
-}, [])
+//  return [...tags, ...tweet.tags]
+// }, [])
 
-console.log(allTags)
+// console.log(allTags)
 
-const tagsStats = allTags.reduce(
-  (acc, tag) => ({
-  ...acc, 
-  [tag]: acc[tag] ? acc[tag] +1 : 1,
-}),
-{},
-)
+// const tagsStats = allTags.reduce(
+//   (acc, tag) => ({
+//   ...acc, 
+//   [tag]: acc[tag] ? acc[tag] +1 : 1,
+// }),
+// {},
+// )
 
-console.log(tagsStats)
+// console.log(tagsStats)
+
+const stats = tweets
+.flatMap(t => t.tags)
+.reduce((acc, tag) => ({
+    ...acc, 
+    [tag]: acc[tag] ? acc[tag] +1 : 1,
+  }),
+  {},
+  )
+
+console.log(stats)
+
+// сорт меняеть расположение єлементов он ничего не выкидывает
+// const numbers = [1, 9, 6, 2, 3]
+// numbers.sort((start, end) => {
+//   return end - start
+// })
+
+// console.log(numbers)
+
+// const letters = ['b', 'B', 'a', 'A']
+// letters.sort()
+
+// console.log(letters)
+
+// const copyNumbers = [...numbers].sort((a, b) => b - a)
+
+// console.log(copyNumbers)
+
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+//   { id: 'player-2', name: 'Kiwi', timePlayed: 470, points: 92, online: true },
+//   { id: 'player-3', name: 'Poly', timePlayed: 230, points: 48, online: true },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
+// ]
+
+// const softByBestPlayers = [...players].sort((startPlayer, endPlayer) => {
+//   return endPlayer.timePlayed - startPlayer.timePlayed;
+// })
+
+// console.log(softByBestPlayers)
+
+// 
+
+// const numbers = [1, 5, 2, 4, 3]
+
+// const sorted = numbers
+// .filter(num => num > 2)
+// .map(num => num * 3)
+// .sort((a, b) => a -b)
+
+// console.log(sorted)
+
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false, rank: 800 },
+//   { id: 'player-2', name: 'Kiwi', timePlayed: 470, points: 92, online: true, rank: 600 },
+//   { id: 'player-3', name: 'Poly', timePlayed: 230, points: 48, online: true, rank: 100 },
+//   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false, rank: 50 },
+//   { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true, rank: 200 },
+// ]
+
+// const onlineAndSorted = players
+// .filter(player => player.online)
+// .sort((start, end) => start.rank - end.rank)
+
+// console.table(onlineAndSorted)
