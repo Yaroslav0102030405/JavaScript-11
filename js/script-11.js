@@ -680,3 +680,80 @@ console.log(stats)
 // .sort((start, end) => start.rank - end.rank)
 
 // console.table(onlineAndSorted)
+let variable1 = 10
+let variable2 = '5'
+
+console.log(variable1 === variable2)
+
+console.log(typeof variable1)
+console.log(typeof variable2)
+
+console.log(variable1 > Number(variable2) )
+
+const number1 = 10
+const number2 = 3
+
+console.log(number1 % number2 === 0)
+
+let a = 10
+
+a += 1
+
+console.log(a)
+
+a *= 2
+console.log(a)
+
+a -= 5
+
+console.log(a)
+
+a /= 2
+
+console.log(a)
+
+setTimeout(function () {
+  console.log('Привет из функции Fn')
+}, 2000)
+
+const array = [true, null]
+
+array.unshift('Hello')
+array.unshift(100)
+
+console.log(array.length)
+
+const array1 = [1, 2]
+
+array1[10] = 'abc'
+
+console.log(array1.length)
+
+const cars = [{
+  carBrand: 'You',
+  price: 100,
+  isAvailableForSale: true,
+},]
+
+const newCar = {
+  a: 5,
+  b: 2,
+  c: 3,
+}
+
+cars.push(newCar)
+
+console.log(cars)
+
+console.log(cars[1].a)
+
+const myObject = {
+  key1: true,
+  key2:10,
+  key3:'abc',
+  key4: null,
+  key5: NaN,
+}
+
+console.log(myObject)
+
