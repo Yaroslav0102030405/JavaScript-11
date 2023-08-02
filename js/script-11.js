@@ -680,80 +680,119 @@ console.log(stats)
 // .sort((start, end) => start.rank - end.rank)
 
 // console.table(onlineAndSorted)
-let variable1 = 10
-let variable2 = '5'
+// let variable1 = 10
+// let variable2 = '5'
 
-console.log(variable1 === variable2)
+// console.log(variable1 === variable2)
 
-console.log(typeof variable1)
-console.log(typeof variable2)
+// console.log(typeof variable1)
+// console.log(typeof variable2)
 
-console.log(variable1 > Number(variable2) )
+// console.log(variable1 > Number(variable2) )
 
-const number1 = 10
-const number2 = 3
+// const number1 = 10
+// const number2 = 3
 
-console.log(number1 % number2 === 0)
+// console.log(number1 % number2 === 0)
 
-let a = 10
+// let a = 10
 
-a += 1
+// a += 1
 
-console.log(a)
+// console.log(a)
 
-a *= 2
-console.log(a)
+// a *= 2
+// console.log(a)
 
-a -= 5
+// a -= 5
 
-console.log(a)
+// console.log(a)
 
-a /= 2
+// a /= 2
 
-console.log(a)
+// console.log(a)
 
-setTimeout(function () {
-  console.log('Привет из функции Fn')
-}, 2000)
+// setTimeout(function () {
+//   console.log('Привет из функции Fn')
+// }, 2000)
 
-const array = [true, null]
+// const array = [true, null]
 
-array.unshift('Hello')
-array.unshift(100)
+// array.unshift('Hello')
+// array.unshift(100)
 
-console.log(array.length)
+// console.log(array.length)
 
-const array1 = [1, 2]
+// const array1 = [1, 2]
 
-array1[10] = 'abc'
+// array1[10] = 'abc'
 
-console.log(array1.length)
+// console.log(array1.length)
 
-const cars = [{
-  carBrand: 'You',
-  price: 100,
-  isAvailableForSale: true,
-},]
+// const cars = [{
+//   carBrand: 'You',
+//   price: 100,
+//   isAvailableForSale: true,
+// },]
 
-const newCar = {
-  a: 5,
-  b: 2,
-  c: 3,
-}
+// const newCar = {
+//   a: 5,
+//   b: 2,
+//   c: 3,
+// }
 
-cars.push(newCar)
+// cars.push(newCar)
 
-console.log(cars)
+// console.log(cars)
 
-console.log(cars[1].a)
+// console.log(cars[1].a)
 
-const myObject = {
+
+
+const feetback = {
   key1: true,
   key2:10,
   key3:'abc',
   key4: null,
   key5: NaN,
 }
+// for (const key in keys) {
+//   console.log(key)
+// }
 
-console.log(myObject)
+const keys = Object.keys(feetback)
+console.log(keys)
+
+for (const key of keys) {
+  // console.log(key)
+  if(key === 'key1' || key === 'key3') {
+    console.log(feetback[key])
+    console.log(key)
+  }
+}
+
+const numbers = [2355, 7235]
+
+const MIN = 1000
+const MAX = 9999
+
+const fn = (min, max) => {
+  return Math.round(Math.random() * (max - min + 1) + min)
+}
+
+console.log(fn(MIN, MAX))
+
+const addNumbers = (array, min, max) => {
+  const newNumber = numbers
+   array.push(newNumber)
+
+   return array
+}
+
+addNumbers(numbers, MIN, MAX)
+
+
+
+
+
 
