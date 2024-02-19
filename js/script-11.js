@@ -421,7 +421,6 @@
 
 // JS - это динамически типизируемый язык. Потому что тип переменной не указываеться когда эта переменная обьявляеться
 
-
 // const numbers = [5, 10, 15, 20, 25]
 // let total = 0
 
@@ -451,7 +450,6 @@
 
 // const playerTimePlayed = players.map(player => total += player.timePlayed)
 // console.log(total)
-
 
 // const playerPoint = players.map(player => player.points)
 // console.log(playerPoint)
@@ -497,7 +495,6 @@
 
 // console.log(filteredNumbers)
 
-
 // const players = [
 //   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
 //   { id: 'player-2', name: 'Kiwi', timePlayed: 470, points: 92, online: true },
@@ -534,23 +531,20 @@
 // const playerWithId = players.find(({ id }) => id === playerIdToFind)
 // console.log(playerWithId)
 
-// const isAllOnline = players.every(player => player.online) 
+// const isAllOnline = players.every(player => player.online)
 // console.log(isAllOnline)
 
-// const isAllPoints = players.every(player => player.points > 40) 
+// const isAllPoints = players.every(player => player.points > 40)
 // console.log(isAllPoints)
 
 // const isAnyOnline = players.some(player => player.online)
 // console.log(isAnyOnline)
-
-
 
 // const numbers = [5, 10, 15, 20, 25]
 
 // const total = numbers.reduce((acc, number) => acc + number, 0)
 
 // console.log('total -', total)
-
 
 // const salary = {
 //   mango: 100,
@@ -562,7 +556,7 @@
 // console.log(totalSalary)
 
 // const totalTimePlayed = players.reduce(
-//   (totalTime, player) => totalTime + player.timePlayed, 
+//   (totalTime, player) => totalTime + player.timePlayed,
 //   0
 //   )
 
@@ -580,7 +574,6 @@
 
 // console.log(totalAmmount)
 
-
 // const totalAmmount = cart.reduce(
 //   (total, { price, quantity }) => total + price * quantity,
 // 0,
@@ -588,13 +581,13 @@
 
 // console.log(totalAmmount)
 
-const tweets = [
-  { id: '000', likes: 5, tags: ['js', 'node.js'] },
-  { id: '001', likes: 2, tags: ['html', 'css'] },
-  { id: '002', likes: 17, tags: ['html', 'js', 'node.js'] },
-  { id: '003', likes: 8, tags: ['css', 'react'] },
-  { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
-]
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "node.js"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "node.js"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "node.js", "react"] },
+// ];
 
 // const allTags = tweets.reduce((tags, tweet) => {
 // //  tags.push(...tweet.tags)
@@ -606,7 +599,7 @@ const tweets = [
 
 // const tagsStats = allTags.reduce(
 //   (acc, tag) => ({
-//   ...acc, 
+//   ...acc,
 //   [tag]: acc[tag] ? acc[tag] +1 : 1,
 // }),
 // {},
@@ -614,16 +607,16 @@ const tweets = [
 
 // console.log(tagsStats)
 
-const stats = tweets
-.flatMap(t => t.tags)
-.reduce((acc, tag) => ({
-    ...acc, 
-    [tag]: acc[tag] ? acc[tag] +1 : 1,
-  }),
-  {},
-  )
+// const stats = tweets
+// .flatMap(t => t.tags)
+// .reduce((acc, tag) => ({
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] +1 : 1,
+//   }),
+//   {},
+//   )
 
-console.log(stats)
+// console.log(stats)
 
 // сорт меняеть расположение єлементов он ничего не выкидывает
 // const numbers = [1, 9, 6, 2, 3]
@@ -656,7 +649,7 @@ console.log(stats)
 
 // console.log(softByBestPlayers)
 
-// 
+//
 
 // const numbers = [1, 5, 2, 4, 3]
 
@@ -747,52 +740,166 @@ console.log(stats)
 
 // console.log(cars[1].a)
 
+// const feetback = {
+//   key1: true,
+//   key2:10,
+//   key3:'abc',
+//   key4: null,
+//   key5: NaN,
+// }
+// // for (const key in keys) {
+// //   console.log(key)
+// // }
 
+// const keys = Object.keys(feetback)
+// console.log(keys)
 
-const feetback = {
-  key1: true,
-  key2:10,
-  key3:'abc',
-  key4: null,
-  key5: NaN,
-}
-// for (const key in keys) {
-//   console.log(key)
+// for (const key of keys) {
+//   // console.log(key)
+//   if(key === 'key1' || key === 'key3') {
+//     console.log(feetback[key])
+//     console.log(key)
+//   }
 // }
 
-const keys = Object.keys(feetback)
-console.log(keys)
+// const numbers = [2355, 7235]
 
-for (const key of keys) {
-  // console.log(key)
-  if(key === 'key1' || key === 'key3') {
-    console.log(feetback[key])
-    console.log(key)
-  }
-}
+// const MIN = 1000
+// const MAX = 9999
 
-const numbers = [2355, 7235]
+// const fn = (min, max) => {
+//   return Math.round(Math.random() * (max - min + 1) + min)
+// }
 
-const MIN = 1000
-const MAX = 9999
+// console.log(fn(MIN, MAX))
 
-const fn = (min, max) => {
-  return Math.round(Math.random() * (max - min + 1) + min)
-}
+// const addNumbers = (array, min, max) => {
+//   const newNumber = numbers
+//    array.push(newNumber)
 
-console.log(fn(MIN, MAX))
+//    return array
+// }
 
-const addNumbers = (array, min, max) => {
-  const newNumber = numbers
-   array.push(newNumber)
+// addNumbers(numbers, MIN, MAX)
 
-   return array
-}
+const numbers = [5, 10, 15, 20, 25];
+// numbers.forEach(function (number, index) {
+//   console.log(number, index);
+// });
 
-addNumbers(numbers, MIN, MAX)
+// const doubleNums = numbers.map(function (number) {
+//   console.log(number);
+//   return number * 2;
+// });
+// console.log(doubleNums);
 
+// const doubleNums = numbers.map((number) => {
+//   console.log(number);
+//   return number * 2;
+// });
+// console.log(doubleNums);
 
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+  { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
+];
 
+// const playerName = players.map((player) => player.name)
+//   // console.log(player.points);
+//   // return player.name;
 
+// console.log(playerName);
 
+// const res = players.map((player) => {
+//   return {
+//     name: player.name,
+//     online: player.online,
+//   };
+// });
+// console.log(res);
 
+// const res = players.map(({ name, online }) => {
+//   return {
+//     name,
+//     online,
+//   };
+// });
+// console.log(res);
+
+// const res = players.map(({ name, online }) => ({ name, online }));
+// console.log(res);
+
+// const updatePlayers = players.map((player) => {
+//   return {
+//     ...player,
+//     points: player.points * 2,
+//   };
+// });
+
+// console.log(updatePlayers);
+
+// const playerIdUpdate = "player-3";
+
+// const updatePlayers = players.map((player) => {
+//   // if (playerIdUpdate === player.id) {
+//   //   return {
+//   //     ...player,
+//   //     id: (player.id = "Обновленный данные"),
+//   //     timePlayed: player.timePlayed + 100,
+//   //   };
+//   // }
+
+//   // return player;
+
+//   return playerIdUpdate === player.id
+//     ? {
+//         ...player,
+//         id: (player.id = "Обновленный данные"),
+//         timePlayed: player.timePlayed + 100,
+//       }
+//     : player;
+// });
+
+// console.log(updatePlayers);
+// const www = "Mango";
+
+// const filteredNumbers = players.filter((player) => {
+//   return player.name === www;
+// });
+
+// console.log(filteredNumbers);
+
+// const onlinePlayers = players.filter((player) => player.online);
+// console.log(onlinePlayers);
+
+// const offlinePlayers = players.filter((player) => !player.online);
+// console.log(offlinePlayers);
+
+// const total = numbers.reduce((acc, num) => acc + num, 0);
+
+// console.log(total);
+
+// const totalTimeplayed = players.reduce((totalTime, player) => {
+//   return totalTime + player.timePlayed;
+// }, 0);
+
+// console.log(totalTimeplayed);
+
+// numbers.sort((start, end) => {
+//   return end - start;
+// });
+
+// console.log(numbers);
+
+// const copy = [...numbers].sort((a, b) => a - b);
+// console.log(copy);
+
+// console.log([1, 2, 3, 4, 5].reverse());
+
+const sortbestPlayers = [...players].sort((prevPlayer, nextPlayer) => {
+  return prevPlayer.timePlayed - nextPlayer.timePlayed;
+});
+console.log(sortbestPlayers);
